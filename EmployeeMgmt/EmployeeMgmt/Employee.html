@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/angular-route.js"></script>
+    <script src="../../APIScripts/Module.js"></script>
+    <script src="../../APIScripts/Controller.js"></script>
+    <script src="../../APIScripts/Service.js"></script>
+</head>
+<h2>Employee List</h2>
+<body data-ng-app="APIModule">
+    <div id="tblEmp" ng-controller="APIController">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>EmailID</th>
+                <td>EmployeeType</td>
+            </tr>
+            <tbody data-ng-repeat="emp in employee">
+                <tr>
+                    <td>{{emp.ID}}</td>
+                    <td>{{emp.Name}}</td>
+                    <td>{{emp.EmailId}}</td>
+                    <td>{{emp.EmployeeType}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" id="name" ng-model="Name"/><br/>
+
+            <label for="EmailId">EmailId</label>
+            <input type="text" class="form-control" id="emailid" data-ng-model="EmailId" /><br />
+
+            <label for="EmployeeType">Employee Type</label>
+            <input type="text" class="form-control" id="emptype" data-ng-model="EmployeeType" /><br />
+
+            <button type="button" class="btn btn-default" data-ng-click="save();">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
